@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <title>Employee CRUD Operation</title>
+</head>
+
+
+<body>
+
+    <header>
+        <h2 class="text-center" style="margin-top: 20px;">Employee CRUD Operation</h2>
+        <h4 class="text-center" style="margin-top: 20px;">Admin View</h4>
+    </header>
+
+    <div class="container">
+        <ul class="text-center">
+            <li><button type="button" class="button is-link" id="create" data-toggle="modal" data-target="#myModal">Add Employee</button></li>
+            <li><button type="button" class="button is-link" id="edit" data-toggle="modal" data-target="#editModal">Edit Employee</button></li>
+            <li><button onClick="deleteAll()" class="button is-link" id="delete">Delete All</button></li>
+            <li><button onClick="getAllEmp()" class="button is-link" id="retrieve">Get Employee</button></li>
+        </ul>
+    </div>
+
+    <div class="modal" id="myModal">
+    <div class="modal-dialog">
+    <div class="modal-content">
+    <table>
+        <tr>
+            <td>
+                    <div>
+                        <label for="empName">Employee Name*</label><label class="validation-error hide" id="empNameValidationError">This field is required.</label>
+                        <input type="text" name="empName" id="empName" placeholder="Enter Employee Name " >
+                    </div>
+                    <div>
+                        <label for="empID">Employee ID</label>
+                        <input type="text" name="empID" id="empID" placeholder="Enter Employee ID " >
+                    </div>
+                    <div>
+                        <label for="city">City</label>
+                        <input type="text" name="city" id="city" placeholder="Enter Employee Location " >
+                    </div>
+                    <div  class="form-action-buttons">
+                        <button onClick="addEmp()" class="button is-link" id="createBtn">Add Employee</button>
+                    </div>
+                
+            </td>
+        </tr>
+    </table>
+    </div>
+    </div>
+    </div>
+
+    <div class="modal" id="editModal">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <table>
+            <tr>
+                <td>
+                        <div>
+                            <label for="empName">Employee Name</label>
+                            <input type="text" name="empName" id="empName" placeholder="Enter Employee Name " >
+                        </div>
+                        <div>
+                            <label for="empID">Employee ID</label>
+                            <input type="text" name="empID" id="empID" placeholder="Enter Employee ID " >
+                        </div>
+                        <div>
+                            <label for="city">City</label>
+                            <input type="text" name="city" id="city" placeholder="Enter Employee Location " >
+                        </div>
+                        <div  class="form-action-buttons">
+                            <button onClick="editEmp()" class="button is-link" id="editBtn">Edit Employee</button>
+                        </div>
+                    
+                </td>
+            </tr>
+        </table>
+        </div>
+        </div>
+        </div>
+        
+    <div class="container">
+        <div class="center">
+        <table class="list" id="employeeTable">
+            <thead>
+                <tr>
+                    <th>Employee Name</th>
+                    <th>Employee ID</th>
+                    <th>City</th>
+                    <th>Action</th>
+                </tr>
+            </thead>     
+        </table>
+    </div>
+    </div>
+   
+            
+        
+
+    <script src="js/index.js"></script>
+     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>
